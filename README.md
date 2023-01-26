@@ -11,13 +11,13 @@
 # 1. Problema de Negócio.
 
  A empresa All in One Place é um Outlet Multimarcas, ou seja, ela comercializa produtos de segunda linha de várias marcas a um preço menor, através de um e-commerce.
-    Em um pouco mais de 1 ano de operação, o time de marketing percebeu que alguns clientes de sua base compram produtos mais caros e com uma certa alta frequência ,e consequentemente, acabam contribuindo com uma parcela significativa do faturamento da empresa.
+    Em um pouco mais de 1 ano de operação, o time de marketing percebeu que alguns clientes de sua base compram produtos mais caros e com uma certa alta frequência, e consequentemente, acabam contribuindo com uma parcela significativa do faturamento da empresa.
     Baseado nessa percepção, o time de marketing vai lançar um programa de fidelidade para os melhores clientes da base, chamado Insiders. Todavia, o time não tem um conhecimento avançado em análise de dados para eleger os participantes do programa.
     Por esse motivo, o time de marketing requisitou ao time de dados uma seleção de clientes elegíveis ao programa, usando técnicas avançadas de manipulação de dados.
 
 ##### O Desafio
 
-Determinar quem são os clientes elegíveis para participar do programa Insiders. Em posse dessa lista, o time de Marketing fará uma sequência de ações personalizadas e exclusivas ao grupo, de modo a aumentar o faturamento e a frequência de compra. Além disso há algumas questões de negócio a serem respondidas.
+Determinar quem são os clientes elegíveis para participar do programa Insiders. Em posse dessa lista, o time de Marketing fará uma sequência de ações personalizadas e exclusivas ao grupo, de modo a aumentar o faturamento e a frequência de compra. Além disso, há algumas questões de negócio a serem respondidas.
 
 #### Questões de Negócio
 
@@ -31,7 +31,7 @@ Determinar quem são os clientes elegíveis para participar do programa Insiders
 
 **5.** Qual a expectativa de faturamento desse grupo para os próximos meses?
 
-**6.** Quais as condições para uma pessoa a ser elegível ao Insiders? 
+**6.** Quais as condições para uma pessoaser elegível ao Insiders? 
 
 **7.** Quais as condições para uma pessoa ser removida do Insiders?
 
@@ -53,7 +53,7 @@ Determinar quem são os clientes elegíveis para participar do programa Insiders
 # 2. Business Assumptions.
 
 #### Dados
-- Cada linha representa uma transação de venda, que ocorreu entre o período de Novembro de 2016 a Dezembro de 2017.
+- As transações das venda ocorreram entre os período de Novembro de 2016 a Dezembro de 2017.
 
 #### Atributos
 
