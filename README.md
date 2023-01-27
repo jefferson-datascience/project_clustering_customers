@@ -177,7 +177,7 @@ Logo, dada a estrutura dos dados e as performances dos modelos, conseguimos uma 
 # 6. Questões de Negócio
 
 **1.** Quem são as pessoas elegíveis para participar do programa de Insiders?
-- As pessoas elegíveis para participar do programa insiders, são os clientes do cluster 3. No arquivo data do repositório você encontrará as informações desse grupo.  As informações estão salvas em um arquivo .csv nomeado de customers_insiders.csv'
+- As pessoas elegíveis para participar do programa insiders, são os clientes do cluster 3. No arquivo data do repositório você encontrará as informações desse grupo.  As informações estão salvas em um arquivo .csv nomeado de customers_insiders.csv' Segue o link para acessar o arquivo .csv: **[Clientes Insiders](https://github.com/jefferson-datascience/project_clustering_customers/blob/main/project_clustering_customers/data/raw/customers_insiders.csv)**
 
 **2.** Quantos clientes farão parte do grupo?
 - Farão parte do programa insiders 1140 clientes.
@@ -200,6 +200,10 @@ Logo, dada a estrutura dos dados e as performances dos modelos, conseguimos uma 
 
 -  Para manter os clientes insiders no Cluster insiders, podemos oferecer descontos, dar a oportunidade dos clientes visitar e conhecer toda a estrutura da empresa, dar premiações, dar brindes de datas comemorativas, oferecer tratamento especial e reservar os melhores produtos para esses clientes. 
 -  Para os outros clusters podemos realizar campanhas de marketing para descontos e promoções para aumentar o faturamento. Explicar os benefícios do programa insiders e qual são os critérios para fazer parte.
+
+Para acessar o desenvolvimento e os códigos, basta clicar nesse link: **[Desenvolvimento e Códigos do Projeto](https://github.com/jefferson-datascience/project_clustering_customers/blob/main/project_clustering_customers/notebooks/7.0_jhc_eda_clusters_correcao_e_ajuste_variaveis_relevantes.ipynb)**
+
+Para acessar o código do modelo que está em produção, basta clicar nesse link: **[Modelo em Produção](https://github.com/jefferson-datascience/project_clustering_customers/blob/main/project_clustering_customers/src/models/modelo_de_producao.ipynb)**
 
 # 7. Lições Aprendidas e Resumo Final
 
