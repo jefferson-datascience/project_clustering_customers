@@ -45,7 +45,7 @@ Determinar quem são os clientes elegíveis para participar do programa Insiders
 **Qual é a solução para esse problema?** A solução para esse problema é o desenvolvimento de um modelo de clusterização(aprendizado de máquina não-supervisionado) para encontrar um grupo com os melhores clientes.
 
 **Como vai ser o produto final?**  
-- i. Dashboard no MetaBase atualizado todo dia 15 de todo mês por meio de uma insfraestrutura de Cloud Computing na AWS.
+- i. Dashboard local desenvolvido no MetaBase que é atualizado todo dia 15 de todo mês por meio de uma insfraestrutura de Cloud Computing na AWS.
 - ii. Arquivo .csv com todos os clientes do cluster insiders.
 - iii. Relatório com as questões de negócio respondidas.
     
