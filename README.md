@@ -78,7 +78,7 @@ A estratégia para resolver esse problema foi:
 
 **Etapa 02 - Filtragem dos Dados:** Remoção de Dados desnecessário, filtragem de clientes que possuem somente faturamento positivo e remoção de outliers.
 
-**Etapa 03 - Feature Engineering:** Criação de Variáveis para uma organização melhor dos espaços de dados.
+**Etapa 03 - Feature Engineering:** Criação de Variáveis para uma organização melhor do espaço de dados.
 
 **Etapa 04 - Análise Exploratória:** Investigação mais afunda dos dados, estudo do espaço de dados original, estudo de espaço embedding com UMAP, T-SNE e Trees Embedding. 
 
@@ -92,7 +92,7 @@ A estratégia para resolver esse problema foi:
 
 **Etapa 09 - Análise dos Clusters:** Análise dos clusters determinados pelos modelos e a investigação dos cluster pela visão de negócio.
 
-**Etapa 10 - Deploy do Modelo em Produção:** Desenvolvimento da infraestrutura na AWS desde a ligação da EC2 passando pela criação da S3 e depositando os dados transformados no banco de dados Postgres na RDS da Amazon. Elaboração do Dashboard no Metabase que consome os dados do Banco de Dados Postgres hospedados na RDS da Amazon.
+**Etapa 10 - Deploy do Modelo em Produção:** Desenvolvimento da infraestrutura na AWS de ponta a ponta desde a criação da S3, ligação da EC2 e upload do banco de dados Postgres na RDS da Amazon. Deploy do modelo na EC2 que consome as informações na S3 e deposita os dados transformados no banco de dados Postgres. Elaboração do Dashboard no Metabase que consome os dados do Banco de Dados Postgres hospedados na RDS da Amazon.
 
 # 4. Modelos de Machine Learning Utilizados
 
@@ -142,12 +142,12 @@ Para analisar a performance dos modelos de Machine Learning, nós utilizamos a s
 
 ## Modelos Escolhidos: Hierarchical Clustering e K-means
 
-Dada as performances, vimos que as métricas não ficaram tão boas, pois os espaço de dados estavam com dados bem aglomerados, mesmo com a criação de novas features e com as técnicas de embedding. Logo, temos que ser bem cautelosos na escolha do melhor modelo. 
-<p>É interessante observar que, em termos de negócio, não vale a pena ter pouco clusters, pois podemos ter clientes bons e ruins em um mesmo grupo, mas também não podemos ter clusters demais, pois fica invabializado a administração de tanto grupos pelo time de Marketing.</p> 
-Assim, nós tomei a decisão de escolher 8 clusters para ser separado pelo modelo. Dado os espaços e a performance para 8 clusters, nós determinamos que os melhores modelos a ser escolhido para a clusterização eram os modelos K-Means e o Hierarchical sobre o espaço de embedding UMAP. 
+Dada as performances, observamos que o desempenho dos modelos não foi como esperado, pois o espaço de dados original estava com os dados bem aglomerados, mesmo com a criação de novas features e com as técnicas de embedding, o que tornou o objetivo de agrupamento bem desafiador. Logo, temos que ser bem cautelosos na escolha do melhor modelo. 
+<p>É interessante observar que, em termos de negócio, não vale a pena ter poucos clusters, pois podemos ter clientes bons e ruins em um mesmo grupo. Entretanto, também não podemos ter clusters demais, pois fica invabializado a administração de tanto grupos pelo time de Marketing.</p> 
+<p>Assim, tomei a decisão de escolher 8 clusters para ser separado pelo modelo. Dado os espaços e a performance para 8 clusters, nós determinamos que os melhores modelos a ser escolhido para a clusterização eram os modelos K-Means e o Hierarchical sobre o espaço de embedding UMAP.</p> 
 
 
-# 7. Análise de Performance de Negócio e Análise Gráfica dos Clusters
+# 5. Análise de Performance de Negócio e Análise Gráfica dos Clusters
 
 Ao observar a distribuição de dados, vemos que com a Clusterização do K-means há um overllaping dos clusters. Todavia, isso não ocorre no Hierarchical Clustering. Portanto, nós escolhemos o Hierarchical Clustering como modelo para ser colocado em produção.
 
@@ -174,10 +174,10 @@ Além disso, conseguimos uma ótima performance de negócio com o modelo Hierarc
 
 Logo, dada a estrutura dos dados e as performances dos modelos, conseguimos uma ótima separação dos clientes. Em termos de negócio conseguimos um ótimo desempenho, pois o cluster Insiders representa 20% da carteira de clientes da empresa e, além disso, esse cluster é responsável por 57% do faturamento anual da empresa, sendo que esses clientes possuem uma recência média de 9 dias com uma média de 220 produtos compras. 
 
-# 8. Questões de Negócio
+# 6. Questões de Negócio
 
 **1.** Quem são as pessoas elegíveis para participar do programa de Insiders?
-- As pessoas elegíveis para participar do programa insiders, são os clientes do cluster 3.No arquivo data do repositório você encontrará as informações desse grupo. As informações estão salvas em um arquivo .csv nomeado de customers_insiders.csv'
+- As pessoas elegíveis para participar do programa insiders, são os clientes do cluster 3. No arquivo data do repositório você encontrará as informações desse grupo.  As informações estão salvas em um arquivo .csv nomeado de customers_insiders.csv'
 
 **2.** Quantos clientes farão parte do grupo?
 - Farão parte do programa insiders 1140 clientes.
@@ -201,7 +201,20 @@ Logo, dada a estrutura dos dados e as performances dos modelos, conseguimos uma 
 -  Para manter os clientes insiders no Cluster insiders, podemos oferecer descontos, dar a oportunidade dos clientes visitar e conhecer toda a estrutura da empresa, dar premiações, dar brindes de datas comemorativas, oferecer tratamento especial e reservar os melhores produtos para esses clientes. 
 -  Para os outros clusters podemos realizar campanhas de marketing para descontos e promoções para aumentar o faturamento. Explicar os benefícios do programa insiders e qual são os critérios para fazer parte.
 
-# 9. Lições Aprendidas
+# 7. Lições Aprendidas e Resumo Final
 
-# 10. Próximos Passos
+Nesse projeto, a principal lição aprendida foi o entendimento da aprendizagem não-supervisionada, o funcionamento dos modelos de clusterização e as técnicas de espaços de embedding. Ao longo desse projeto, percebi que desenvolver modelos para clusterização é bem desafiante, pois nessa situação, a forma como os dados estão distribuídos é MUITO relevante. 
+<p>Para isso, existem técnicas para contornar esse problema. A primeira estratégia a ser abordada é a criação de novas features para tentar melhorar o espaço de dados original. No nosso problema, foram criadas 13 features para ocorrer a tentativa de uma melhor organização dos dados, entretanto, não houve tanto sucesso. O próximo passo foi utilizar técnicas de espaços de embedding, no caso, soluções topológicas como UMAP e T-SNE que usam técnicas de projeção de espaço, e também usamos as técnicas das Folhas das arvores de decisão para organizar melhor o espaço. Nessa  situação, conseguimos uma melhora pequena melhora nos espaços.</p>
+<p>Com um espaço melhor definido, compreendemos o funcionamento dos modelos utilizados e como cada um poderia atuar da melhor forma possível sobre esses espaços a partir de suas métricas de distâncias e seus métodos de clusterização.</p>
+Enfim, problemas de clusterização são bem difícieis de se trabalhar. Além disso, o espaço de dados que será clusterizado pode facilitar a clusterização ou pode dificultar muito mais.
+
+# 8. Próximos Passos
+
+- Estudo de outros modelos de clusterização para  melhorar as métricas de performance.
+- Estudo de mais técnicas para organizar melhor o espaço de dados.
+- Feature Engineering para criar features melhores e mais relevantes pata melhorar o espaço.
+- Realizar um novo ciclo para responder as questões faltantes.
+- Treino da equipe de marketing para utilizar o dashboard.
+- Manutenção da infraestrutura da AWS
+- Retreino do modelo periodicamente.
 
